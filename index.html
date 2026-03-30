@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melodify : sunteee rahoo!!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div class="app">
+
+  
+  <nav class="navbar">
+    <div class="logo">melodi<span>fy</span></div>
+    <div class="nav-home" title="Home" onclick="showHome()">
+      <i class="fa-solid fa-house"></i>
+    </div>
+    <div class="search-wrap">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="search-input" type="text" placeholder="Search songs, artists, albums…">
+      <div class="spinner" id="search-spinner"></div>
+    </div>
+    <div class="nav-right">
+      <button class="nav-btn outline">Support</button>
+      <button class="nav-btn outline">Sign up</button>
+      <button class="nav-btn fill">Log in</button>
+    </div>
+  </nav>
+
+  <!-- ══ SIDEBAR ══ -->
+  <aside class="sidebar">
+    <div class="sidebar-title">Menu</div>
+    <div class="sidebar-item active" onclick="showHome()">
+      <i class="fa-solid fa-house"></i> Home
+    </div>
+    <div class="sidebar-item">
+      <i class="fa-solid fa-compass"></i> Discover
+    </div>
+    <div class="sidebar-item">
+      <i class="fa-solid fa-radio"></i> Radio
+    </div>
+
+    <div class="sidebar-divider"></div>
+   <div class="sidebar-title">Library</div>
+    <div class="sidebar-item">
+      <i class="fa-solid fa-heart"></i> Liked Songs
+    </div>
+    <div class="sidebar-item">
+      <i class="fa-regular fa-clock"></i> Recently Played
+    </div>
+    <div class="sidebar-item">
+      <i class="fa-solid fa-list"></i> Playlists
+    </div>
+
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-title">Playlists</div>
+
+    <div class="sidebar-playlist">
+      <img src="https://1.bp.blogspot.com/-I9-IT0wRPIY/XGLhARank9I/AAAAAAAAAoM/u-6bzG5PacoTBUyHrI9WVIG_puCB6ifVwCK4BGAYYCw/s1600/Bollywood-1024x512.jpg" alt="">
+      <div class="pl-info">
+        <div class="pl-name">Bollywood Hits</div>
+        <div class="pl-sub">Playlist • 24 songs</div>
+      </div>
+    </div>
+    <div class="sidebar-playlist">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.BWN9XB5Uv4spBLz_heIH3QHaFj?w=1024&h=768&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+      <div class="pl-info">
+        <div class="pl-name">Chill Vibes</div>
+        <div class="pl-sub">Playlist • 18 songs</div>
+      </div>
+    </div>
+    <div class="sidebar-playlist">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.12dTSvJEDJ9obiBzbnhRMQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+      <div class="pl-info">
+        <div class="pl-name">Top 50 India</div>
+        <div class="pl-sub">Playlist • 50 songs</div>
+      </div>
+    </div>
+  </aside>
+
+  
+  <main class="main" id="main">
+
+    
+    <div class="home-content" id="home-content">
+
+      
+      <div class="featured fade-up" id="featured-banner">
+        <img class="featured-art" id="featured-art"
+          src="https://i.ytimg.com/vi/YJ-NAltFP6M/maxresdefault.jpg" alt="">
+        <div class="featured-info">
+          <div class="featured-label">🔥 Featured</div>
+          <div class="featured-title" id="featured-title">Tere Naam</div>
+          <div class="featured-sub" id="featured-sub">Udit Narayan • Bollywood Classics</div>
+          <div class="featured-play">
+            <button class="featured-play-btn" id="featured-btn" onclick="playFeatured()">
+              <i class="fa-solid fa-play"></i> Play Preview
+            </button>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="section-header fade-up">
+        <div class="section-title">Trending Now</div>
+        <div class="section-link">See all</div>
+      </div>
+      <div class="cards-row fade-up" id="trending-row">
+        <div style="color:var(--muted);font-size:13px;padding:20px;">Loading…</div>
+      </div>
+
+      
+      <div class="section-header fade-up">
+        <div class="section-title">Popular Albums</div>
+        <div class="section-link">See all</div>
+      </div>
+      <div class="cards-row fade-up" id="albums-row">
+        <div style="color:var(--muted);font-size:13px;padding:20px;">Loading…</div>
+      </div>
+
+      
+      <div class="section-header fade-up">
+        <div class="section-title">Top Artists</div>
+        <div class="section-link">See all</div>
+      </div>
+      <div class="cards-row fade-up" id="artists-row">
+        <div style="color:var(--muted);font-size:13px;padding:20px;">Loading…</div>
+      </div>
+
+      
+      <div class="section-header fade-up">
+        <div class="section-title">Global Top 10</div>
+        <div class="section-link">See all</div>
+      </div>
+      <div id="charts-list" class="fade-up">
+        <div style="color:var(--muted);font-size:13px;padding:20px;">Loading…</div>
+      </div>
+
+    </div>
+
+    <div class="search-results" id="search-results">
+      <div class="section-title fade-up" id="search-heading" style="margin-bottom:20px;"></div>
+      <div class="results-grid">
+        <div>
+          <div class="results-col-title">Top Result</div>
+          <div id="top-result-col"></div>
+        </div>
+        <div>
+          <div class="results-col-title">Songs</div>
+          <div id="songs-list-col"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+ 
+  <div class="playbar">
+    
+    <div class="pb-left">
+      <div class="pb-art-placeholder" id="pb-art-placeholder">
+        <i class="fa-solid fa-music"></i>
+      </div>
+      <img id="pb-art" src="" alt="">
+      <div class="pb-track">
+        <div id="pb-title">Nothing playing</div>
+        <div id="pb-artist">—</div>
+      </div>
+      <i class="fa-regular fa-heart pb-heart"></i>
+    </div>
+
+    
+    <div class="pb-center">
+      <div class="pb-controls">
+        <button class="pb-btn" onclick="playPrev()" title="Previous">
+          <i class="fa-solid fa-backward-step"></i>
+        </button>
+        <button class="pb-play" id="pb-play-btn" onclick="togglePlayPause()">
+          <i class="fa-solid fa-play"></i>
+        </button>
+        <button class="pb-btn" onclick="playNext()" title="Next">
+          <i class="fa-solid fa-forward-step"></i>
+        </button>
+      </div>
+      <div class="pb-progress">
+        <span class="pb-time" id="pb-current">0:00</span>
+        <div class="progress-track" id="progress-track" onclick="seekTo(event)">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <span class="pb-time" id="pb-duration">0:30</span>
+      </div>
+    </div>
+
+   
+    <div class="pb-right">
+      <span class="preview-badge">30s Preview</span>
+      <i class="fa-solid fa-volume-high pb-vol-icon"></i>
+      <div class="vol-track" onclick="setVolume(event)">
+        <div class="vol-fill" id="vol-fill"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<audio id="audio-player"></audio>
+    <script src="spotify.js"></script>
+</body>
+</html>
