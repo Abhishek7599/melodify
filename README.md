@@ -1,6 +1,6 @@
 # 🎧 Melodify
 
-**Melodify** is a sleek and modern web-based music player that allows users to search and play 30-second song previews using the iTunes API. It offers a smooth and interactive experience with essential playback controls and smart song suggestions.
+**Melodify** is a sleek and modern web-based music player that allows users to search and play 30-second song previews using the iTunes API. It offers a smooth and interactive experience with essential playback controls and smart song suggestions
 
 ---
 
